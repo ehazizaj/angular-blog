@@ -1,0 +1,95 @@
+
+{
+    "posts": [
+      {
+        "id": 1,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 2,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 3,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 4,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 5,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 6,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 7,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      },
+      {
+        "id": 8,
+        "title": "Oasis",
+        "subtitle": "Half The World Away",
+        "image": "Half The World Away",
+        "body": "Half The World Away",
+        "postedBy": "Erjon Hazizaj",
+        "postedOn": "2020-01-01",
+        "read": false,
+        "favourite": false
+      }
+  ]
+
+}
+
