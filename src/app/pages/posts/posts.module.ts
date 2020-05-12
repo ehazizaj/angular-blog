@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { AllPostsComponent } from './containers/all-posts/all-posts.component';
 import { PostSingleComponent } from './containers/post-single/post-single.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { PostsService } from './service/posts.service';
+
 
 const routes: Routes = [
   {
@@ -20,9 +23,15 @@ const routes: Routes = [
     PostSingleComponent
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CommonModule
   ],
-  exports: [RouterModule]
+  providers: [PostsService],
+  exports: [
+    RouterModule,
+    AllPostsComponent,
+    PostSingleComponent
+  ]
 })
 export class PostsModule {
 }
