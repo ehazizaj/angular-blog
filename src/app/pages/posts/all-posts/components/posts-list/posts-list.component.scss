@@ -1,0 +1,14 @@
+favourite {
+  width: 22px;
+  height: 20px;
+  position: absolute;
+  top: 27px;
+  right: 20px;
+  background: url(../../../../../../assets/img/favourite.svg) no-repeat 0 0;
+  background-size: 20px 20px;
+  cursor: pointer;
+  &.active {
+    background: url(../../../../../../assets/img/favourite-active.svg) no-repeat 0 0;
+    background-size: 20px 20px;
+  }
+}

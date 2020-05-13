@@ -1,0 +1,22 @@
+<div class="post-preview" *ngFor="let post of posts">
+  <a href="/">
+
+    <h2 class="post-title">
+      {{post.title}}
+    </h2>
+    <h3 class="post-subtitle">
+      {{post.body}}
+    </h3>
+  </a>
+  <p class="post-meta">Posted by
+    <a>{{post.postedBy}}</a>
+    on {{post.postedOn | date: 'EEEE, MMMM d y, hh:mm'}}
+
+  </p>
+  <div
+    class="favourite"
+    [class.active]="post.favourite">
+  </div>
+
+</div>
+

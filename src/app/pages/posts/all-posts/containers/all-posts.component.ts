@@ -19,6 +19,7 @@ export class AllPostsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.allPosts$ = this.store.select('posts');
     this.subscription = this.postsService.getPosts$.subscribe();
+
   }
 
   ngOnDestroy() {
