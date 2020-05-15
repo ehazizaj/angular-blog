@@ -26,9 +26,9 @@ export class Store {
   }
 
 
-  set(name: string, state: any) {
+  set(name: string, value: any) {
     this.subject.next({
-      ...this.value, [name]: state
+      ...this.value, [name]: value
     });
   }
 

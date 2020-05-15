@@ -1,24 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Store } from '../store/store';
-
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-
-
+import { Observable, throwError } from 'rxjs';
+import { tap, catchError  } from 'rxjs/operators';
+import { API_TOKEN } from '../../../token';
 @Injectable()
 export class PostsService {
-  url = 'http://localhost:3000/posts';
-  getPosts$: Observable<any> = this.http
-    .get(this.url)
-    .pipe(
-      tap(next => this.store.set('posts', next))
-    );
   constructor(
     private http: HttpClient,
-    private store: Store
+    private store: Store,
+    @Inject(API_TOKEN) private posts: string
   ) {}
+
+  getPosts$: Observable<any> = this.http
+    .get(this.posts)
+    .pipe(
+      tap(posts => this.store.set('posts', posts)),
+      catchError( error => {
+        return throwError( 'Something went wrong!' );
+      })
+    );
 
   // toggle(event: any) {
   //   this.http

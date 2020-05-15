@@ -8,7 +8,6 @@ import {SharedModule} from './shared/shared.module';
 import { PostsModule } from './pages/posts/posts.module';
 import { Store } from './pages/posts/store/store';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule, Store],
+  providers: [
+    HttpClientModule,
+    Store,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

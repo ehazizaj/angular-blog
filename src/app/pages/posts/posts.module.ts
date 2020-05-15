@@ -1,34 +1,46 @@
 import { NgModule } from '@angular/core';
-import { AllPostsComponent } from './all-posts/containers/all-posts.component';
-import { PostSingleComponent } from './post-single/post-single.component';
+import { AllPostsComponent } from './containers/all-posts/containers/all-posts.component';
+import { PostSingleComponent } from './containers/post-single/containers/post-single.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PostsService } from './service/posts.service';
-import { PostsListComponent } from './all-posts/components/posts-list/posts-list.component';
+import { PostsListComponent } from './containers/all-posts/components/posts-list/posts-list.component';
+import { API_TOKEN } from '../../token';
+import { PostsComponent } from './containers/posts/posts.component';
+import { PostPresenterComponent } from './containers/post-single/components/post-presenter/post-presenter.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AllPostsComponent
-  },
-  // {
-  //   path: 'all',
-  //   component: AllPostsComponent
-  // }
+    component: PostsComponent,
+    children: [
+      {
+        path: '', component: AllPostsComponent
+      },
+      {
+        path: ':id', component: PostSingleComponent,
+      },
+    ]
+  }
 ];
 
 @NgModule({
   declarations: [
     AllPostsComponent,
     PostSingleComponent,
-    PostsListComponent
+    PostsListComponent,
+    PostsComponent,
+    PostPresenterComponent
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule
   ],
-  providers: [PostsService],
+  providers: [
+    PostsService,
+    { provide: API_TOKEN, useValue: 'http://localhost:3000/posts' }
+  ],
   exports: [
     RouterModule,
     AllPostsComponent,

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Store } from '../../store/store';
-import { PostsService } from '../../service/posts.service';
-import { Post } from '../../models/posts';
+import { Store } from '../../../store/store';
+import { PostsService } from '../../../service/posts.service';
+import { Post } from '../../../models/posts';
 
 @Component({
   selector: 'app-all-posts',
@@ -19,7 +19,6 @@ export class AllPostsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.allPosts$ = this.store.select('posts');
     this.subscription = this.postsService.getPosts$.subscribe();
-
   }
 
   ngOnDestroy() {
