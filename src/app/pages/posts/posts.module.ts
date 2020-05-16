@@ -16,10 +16,10 @@ const routes: Routes = [
     component: PostsComponent,
     children: [
       {
-        path: '', component: AllPostsComponent
+        path: '', component: AllPostsComponent, data: { title: 'Home' }
       },
       {
-        path: ':id', component: PostSingleComponent,
+        path: ':id', component: PostSingleComponent, data: { title: 'Post Details' },
       },
     ]
   }
@@ -38,7 +38,6 @@ const routes: Routes = [
     CommonModule
   ],
   providers: [
-    PostsService,
     { provide: API_TOKEN, useValue: 'http://localhost:3000/posts' }
   ],
   exports: [

@@ -32,7 +32,7 @@ export class Store {
     return newMap;
   }
 
-  select<T>(name: string): Observable<T> | Observable<T[]> {
+  select<T>(name: string): Observable<T[] | Observable<boolean>> {
     return this.store$.pipe(
       pluck(name),
       map((val: Map<string, T>) => val ? Store.mapToArray<T>(val) : null)
@@ -45,6 +45,7 @@ export class Store {
       map((val: Map<number, T>) => val ? val.get(+itemId) : null)
     );
   }
+
   set(name: string, state: any, key?: string) {
     const newState = Array.isArray(state) ? Store.arrayToMap(state, key) : state;
     this.store.next({

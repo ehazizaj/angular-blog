@@ -10,7 +10,6 @@ import { Post } from '../../../models/posts';
 })
 export class AllPostsComponent implements OnInit, OnDestroy {
   allPosts$: Observable<any>;
-
   subscription: Subscription;
   constructor(
     private store: Store,
@@ -19,7 +18,7 @@ export class AllPostsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.allPosts$ = this.store.select('posts');
-    this.subscription = this.postsService.getPosts$.subscribe();
+    this.subscription = this.postsService.posts$.subscribe();
   }
 
   ngOnDestroy() {

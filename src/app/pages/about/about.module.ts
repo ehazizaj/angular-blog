@@ -10,8 +10,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AboutComponent
-  }
+    component: AboutComponent,
+    data: { title: 'About Us' }
+}
 ];
 
 @NgModule({

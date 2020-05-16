@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Post } from '../../../models/posts';
 import { Store } from '../../../store/store';
-import { filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../../../service/posts.service';
 
@@ -22,12 +21,13 @@ export class PostSingleComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.subscription = this.postsService.getPosts$.subscribe();
+
     this.subToURl = this.route.params.subscribe(params => {
       this.id = params.id;
     });
 
     this.post$ = this.store.selectItem('posts', this.id);
+    this.subscription = this.postsService.posts$.subscribe();
   }
 
   ngOnDestroy() {

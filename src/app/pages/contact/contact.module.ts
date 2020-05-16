@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: ContactComponent
+    component: ContactComponent,
+    data: { title: 'Contact Page' }
   }
 ];
 
