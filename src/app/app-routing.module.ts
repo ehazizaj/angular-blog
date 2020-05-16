@@ -29,12 +29,13 @@ const routes: Routes = [
     ]
   },
   {
-    path: '**', component: MainComponent, children: [
+    path: '404', component: MainComponent, children: [
       {
         path: '',  component: NotFoundComponent
       }
     ]
   },
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

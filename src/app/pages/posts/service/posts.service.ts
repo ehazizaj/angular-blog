@@ -4,6 +4,7 @@ import { Store } from '../store/store';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError  } from 'rxjs/operators';
 import { API_TOKEN } from '../../../token';
+import { Post } from '../models/posts';
 @Injectable()
 export class PostsService {
   constructor(

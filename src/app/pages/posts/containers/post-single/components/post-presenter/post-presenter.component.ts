@@ -6,11 +6,8 @@ import { Post } from '../../../../models/posts';
   templateUrl: './post-presenter.component.html',
   styleUrls: ['./post-presenter.component.scss']
 })
-export class PostPresenterComponent implements OnInit{
+export class PostPresenterComponent{
 
   @Input()
-  post: Post;
-  ngOnInit() {
-    console.log(this.post);
-  }
+  post: Post | boolean;
 }

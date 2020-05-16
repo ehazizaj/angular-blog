@@ -9,7 +9,8 @@ import { Post } from '../../../models/posts';
   templateUrl: './all-posts.component.html',
 })
 export class AllPostsComponent implements OnInit, OnDestroy {
-  allPosts$: Observable<Post[]>;
+  allPosts$: Observable<any>;
+
   subscription: Subscription;
   constructor(
     private store: Store,
