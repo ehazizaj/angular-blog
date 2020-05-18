@@ -12,7 +12,7 @@ import { PostsService } from '../../../service/posts.service';
 export class PostSingleComponent implements OnInit, OnDestroy {
   id: number;
   subToURl: Subscription;
-  post$: Observable<Post> | Observable<boolean>;
+  post$: Observable<any>;
   subscription: Subscription;
   constructor(
     private store: Store,
@@ -26,7 +26,7 @@ export class PostSingleComponent implements OnInit, OnDestroy {
       this.id = params.id;
     });
 
-    this.post$ = this.store.selectItem('posts', this.id);
+    this.post$ = this.store.selectItem<Post>('posts', this.id);
     this.subscription = this.postsService.posts$.subscribe();
   }
 

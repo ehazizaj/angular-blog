@@ -3,11 +3,10 @@ import { Post } from '../../../../models/posts';
 
 @Component({
   selector: 'app-post-presenter',
-  templateUrl: './post-presenter.component.html',
-  styleUrls: ['./post-presenter.component.scss']
+  templateUrl: './post-presenter.component.html'
 })
 export class PostPresenterComponent{
 
   @Input()
-  post: Post | boolean;
+  post: Post;
 }
