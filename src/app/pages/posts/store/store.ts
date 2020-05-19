@@ -1,5 +1,5 @@
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map, pluck } from 'rxjs/operators';
+import { map, pluck, tap } from 'rxjs/operators';
 
 export interface State {
   [key: string]: any;
@@ -13,7 +13,7 @@ export class Store {
     return this.store.value;
   }
 
-  private store = new BehaviorSubject<State>(initialState);
+  private store = new BehaviorSubject<any>(initialState);
   private store$ = this.store.asObservable();
 
   private static mapToArray<T>(mapObj: Map<string, T>): T[] {
@@ -23,6 +23,7 @@ export class Store {
     }
     return arr;
   }
+
 
   private static arrayToMap<T>(arr: T[], key: string = 'id'): Map<string, T> {
     const newMap = new Map<string, T>();
@@ -47,11 +48,18 @@ export class Store {
   }
 
   set(name: string, state: any, key?: string) {
-    const newState = Array.isArray(state) ? Store.arrayToMap(state, key) : state;
-    this.store.next({
-      ...this.value,
-      [name]: newState
-    });
+    if (state.posts instanceof Map) {
+      this.store.next({
+        ...this.value,
+        [name]: state.posts
+      });
+    } else {
+      const newState = Array.isArray(state) ? Store.arrayToMap(state, key) : state;
+      this.store.next({
+        ...this.value,
+        [name]: newState
+      });
+    }
   }
 
 }

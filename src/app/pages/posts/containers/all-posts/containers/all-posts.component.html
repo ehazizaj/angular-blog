@@ -13,4 +13,4 @@
   </div>
 </header>
 
-<app-posts-list [posts]="allPosts$ | async"></app-posts-list>
+<app-posts-list [posts]="allPosts$ | async" (toggle)="onToggle($event)"></app-posts-list>

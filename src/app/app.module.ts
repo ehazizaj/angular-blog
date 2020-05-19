@@ -8,6 +8,7 @@ import {SharedModule} from './shared/shared.module';
 import { PostsModule } from './pages/posts/posts.module';
 import { Store } from './pages/posts/store/store';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     PostsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     HttpClientModule,

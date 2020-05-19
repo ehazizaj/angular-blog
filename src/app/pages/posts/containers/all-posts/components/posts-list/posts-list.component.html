@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12 col-md-10 mx-auto" *ngIf="posts">
-  <div class="post-preview" *ngFor="let post of posts">
+  <div class="post-preview" *ngFor="let post of posts; index as i;">
     <a [routerLink]="['/home', post.id]">
       <h2 class="post-title">
         {{post.title}}
@@ -17,11 +17,26 @@
       class="songs-list__listened"
       [class.active]="post.read">
     </div>
-
+    <ul class="list-inline">
+      <li class="list-inline-item">
+                <span>
+                 <fa-icon [icon]="faHeart" size="2x" [styles]="{'stroke': '#C82333', 'color': '#C82333'}" *ngIf="post.favourite" (click)="toggleItem(i, 'favourite')"></fa-icon>
+                 <fa-icon [icon]="faHeartBroken" size="2x" [styles]="{'stroke': '#C82333', 'color': '#C82333'}" *ngIf="!post.favourite" (click)="toggleItem(i, 'favourite')"></fa-icon>
+                </span>
+      </li>
+      <li class="list-inline-item">
+                <span>
+                 <fa-icon [icon]="faBook" size="2x" [styles]="{'stroke': '#138496', 'color': '#138496'}" *ngIf="!post.read" (click)="toggleItem(i, 'read')"></fa-icon>
+                <fa-icon [icon]="faBookOpen" size="2x" [styles]="{'stroke': '#138496', 'color': '#138496'}" *ngIf="post.read" (click)="toggleItem(i, 'read')"></fa-icon>
+                </span>
+      </li>
+    </ul>
     <p class="post-meta">Posted by
       <a>{{post.postedBy}}</a>
       on {{post.postedOn | date: 'EEEE, MMMM d y, hh:mm'}}
+
     </p>
+
     <div class="form-group">
       <button type="button" [routerLink]="['/home', post.id]" class="btn btn-primary" id="sendMessageButton">Read More</button>
     </div>
@@ -31,4 +46,5 @@
 </div>
   </div>
 </div>
+
 

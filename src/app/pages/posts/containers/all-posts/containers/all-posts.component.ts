@@ -21,6 +21,10 @@ export class AllPostsComponent implements OnInit, OnDestroy {
     this.subscription = this.postsService.posts$.subscribe();
   }
 
+  onToggle(event) {
+     this.postsService.toggle(event);
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

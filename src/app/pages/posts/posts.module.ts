@@ -8,6 +8,7 @@ import { PostsListComponent } from './containers/all-posts/components/posts-list
 import { API_TOKEN } from '../../token';
 import { PostsComponent } from './containers/posts/posts.component';
 import { PostPresenterComponent } from './containers/post-single/components/post-presenter/post-presenter.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   providers: [
     { provide: API_TOKEN, useValue: 'http://localhost:3000/posts' }
