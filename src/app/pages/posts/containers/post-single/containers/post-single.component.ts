@@ -30,6 +30,11 @@ export class PostSingleComponent implements OnInit, OnDestroy {
     this.subscription = this.postsService.posts$.subscribe();
   }
 
+  onToggle(event) {
+    // console.log(event);
+    this.postsService.toggle(event);
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.subToURl.unsubscribe();

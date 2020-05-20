@@ -20,14 +20,18 @@
     <ul class="list-inline">
       <li class="list-inline-item">
                 <span>
-                 <fa-icon [icon]="faHeart" size="2x" [styles]="{'stroke': '#C82333', 'color': '#C82333'}" *ngIf="post.favourite" (click)="toggleItem(i, 'favourite')"></fa-icon>
-                 <fa-icon [icon]="faHeartBroken" size="2x" [styles]="{'stroke': '#C82333', 'color': '#C82333'}" *ngIf="!post.favourite" (click)="toggleItem(i, 'favourite')"></fa-icon>
+                 <fa-icon [icon]="faHeart" size="2x" [styles]="{'stroke': '#C82333', 'color': '#C82333'}" *ngIf="post.favourite" (click)="toggleItem(i, 'favourite')"
+                 title="Remove Favourite"></fa-icon>
+                 <fa-icon [icon]="faHeartBroken" size="2x" [styles]="{'stroke': '#C82333', 'color': '#C82333'}" *ngIf="!post.favourite" (click)="toggleItem(i, 'favourite')"
+                          title="Add Favourite"></fa-icon>
                 </span>
       </li>
       <li class="list-inline-item">
                 <span>
-                 <fa-icon [icon]="faBook" size="2x" [styles]="{'stroke': '#138496', 'color': '#138496'}" *ngIf="!post.read" (click)="toggleItem(i, 'read')"></fa-icon>
-                <fa-icon [icon]="faBookOpen" size="2x" [styles]="{'stroke': '#138496', 'color': '#138496'}" *ngIf="post.read" (click)="toggleItem(i, 'read')"></fa-icon>
+                 <fa-icon [icon]="faBook" size="2x" [styles]="{'stroke': '#138496', 'color': '#138496'}" *ngIf="!post.read" (click)="toggleItem(i, 'read')"
+                          title="Mark as read"></fa-icon>
+                <fa-icon [icon]="faBookOpen" size="2x" [styles]="{'stroke': '#138496', 'color': '#138496'}" *ngIf="post.read" (click)="toggleItem(i, 'read')"
+                         title="Mark as unread"></fa-icon>
                 </span>
       </li>
     </ul>

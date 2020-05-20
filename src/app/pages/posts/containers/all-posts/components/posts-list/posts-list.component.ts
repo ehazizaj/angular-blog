@@ -4,8 +4,7 @@ import { faBook, faBookOpen, faHeart, faHeartBroken } from '@fortawesome/free-so
 
 @Component({
   selector: 'app-posts-list',
-  templateUrl: './posts-list.component.html',
-  styleUrls: ['./posts-list.component.scss']
+  templateUrl: './posts-list.component.html'
 })
 export class PostsListComponent{
   @Input()

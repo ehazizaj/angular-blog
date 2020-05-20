@@ -8,6 +8,7 @@ import {
 } from './components';
 import { RouterModule } from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {SharedModule} from '../shared/shared.module';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ],
   exports: [
     NavigationComponent,
