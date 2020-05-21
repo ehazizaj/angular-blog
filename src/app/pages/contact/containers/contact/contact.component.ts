@@ -35,6 +35,7 @@ export class ContactComponent implements OnInit{
     this.form.reset();
     this.router.navigate([ '/contact/success' ]);
   }
+
   onFormChange(event: boolean, touched: boolean) {
     this.hasUnsavedChanges = true;
   }
@@ -44,7 +45,7 @@ export class ContactComponent implements OnInit{
     if (!this.hasUnsavedChanges) {
       return true;
     }
-    return confirm('All your forms will be lost, are you sure?');
+    return confirm('All your form input will be lost, are you sure?');
   }
 
   required(name: string) {
